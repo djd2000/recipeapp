@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>Recipe Home</title>
 </head>
 <body>
+	<!--/*@thymesVar id="owner" type="com.djd2000.domain.Recipe"*/-->
 	<h1>MyRecipes!</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Description</th>
+				<th>Source</th>
+				<th>Directions</th>
+				<th>URL</th>
+				<th>Cook Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="recipe : ${recipes}">
+				<td th:text="${recipe.id}">1</td>
+				<td th:text="${recipe.description}">Joe</td>
+				<td th:text="${recipe.source}">Buck</td>
+				<td th:text="${recipe.directions}">Joe</td>
+				<td th:text="${recipe.url}">Joe</td>
+				<td th:text="${recipe.cookTime}">Joe</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
