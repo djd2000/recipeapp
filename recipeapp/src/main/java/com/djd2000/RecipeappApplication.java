@@ -1,4 +1,4 @@
-package com.djd2000.recipe;
+package com.djd2000;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
