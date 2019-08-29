@@ -1,6 +1,7 @@
 package com.djd2000.services;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -27,6 +28,12 @@ public class RecipeServiceImpl implements RecipeService {
 	public Set<Recipe> getAllRecipes() {
 		Set<Recipe> recipeSet = new HashSet<>();
 		recipieRepository.findAll().iterator().forEachRemaining(recipeSet::add);
+		
+//		for (Iterator<Recipe> iterator = recipieRepository.findAll().iterator(); iterator.hasNext();) {
+//			Recipe recipe = (Recipe) iterator.next();
+//			recipeSet.add(recipe);
+//		}
+		
 		return recipeSet;
 	}
 
