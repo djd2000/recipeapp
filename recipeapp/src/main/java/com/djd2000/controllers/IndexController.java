@@ -1,4 +1,4 @@
-package com.djd2000.recipe.controllers;
+package com.djd2000.controllers;
 
 import java.util.Optional;
 
