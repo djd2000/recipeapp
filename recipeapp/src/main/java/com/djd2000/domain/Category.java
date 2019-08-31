@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.Data;
+
 /**
  * 
  * @author david

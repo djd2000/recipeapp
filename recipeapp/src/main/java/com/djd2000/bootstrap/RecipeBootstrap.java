@@ -1,9 +1,12 @@
 package com.djd2000.bootstrap;
 
 import java.math.BigDecimal;
+
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+
+import javax.transaction.Transactional;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,6 +21,13 @@ import com.djd2000.repositories.CategoryRepository;
 import com.djd2000.repositories.RecipeRepository;
 import com.djd2000.repositories.UnitOfMeasureReposiory;
 
+import lombok.extern.slf4j.Slf4j;
+/**
+ * 
+ * @author david
+ *
+ */
+@Slf4j
 @Component
 public class RecipeBootstrap implements CommandLineRunner {
 	private final RecipeRepository recipeRepository;
@@ -33,9 +43,11 @@ public class RecipeBootstrap implements CommandLineRunner {
 	}
 
 	@Override
+	@Transactional
 	public void run(String... args) throws Exception {
 		if (!recipeRepository.findAll().iterator().hasNext()) {
 			loadData();
+			log.debug("loading bootstarp data");
 		}
 
 		printData();

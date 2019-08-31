@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 import com.djd2000.domain.Recipe;
 import com.djd2000.repositories.RecipeRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 
  * @author david
  *
  */
+@Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
@@ -26,6 +29,7 @@ public class RecipeServiceImpl implements RecipeService {
 
 	@Override
 	public Set<Recipe> getAllRecipes() {
+		log.debug("In recipe service");
 		Set<Recipe> recipeSet = new HashSet<>();
 		recipieRepository.findAll().iterator().forEachRemaining(recipeSet::add);
 		

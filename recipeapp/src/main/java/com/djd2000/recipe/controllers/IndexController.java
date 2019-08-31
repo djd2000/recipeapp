@@ -13,11 +13,14 @@ import com.djd2000.repositories.RecipeRepository;
 import com.djd2000.repositories.UnitOfMeasureReposiory;
 import com.djd2000.services.RecipeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 
  * @author david
  *
  */
+@Slf4j
 @Controller
 public class IndexController {
 	RecipeService recipeService;
@@ -29,7 +32,7 @@ public class IndexController {
 
 	@RequestMapping({ "", "/", "index", "index.html" })
 	public String getIndexPage(Model model) {
-
+		log.debug("Getting Index page");
 		model.addAttribute("recipes", recipeService.getAllRecipes());
 		return "index";
 	}
