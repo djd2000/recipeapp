@@ -28,7 +28,7 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
-	public Set<Recipe> getAllRecipes() {
+	public Set<Recipe> getRecipes() {
 		log.debug("In recipe service");
 		Set<Recipe> recipeSet = new HashSet<>();
 		recipieRepository.findAll().iterator().forEachRemaining(recipeSet::add);
