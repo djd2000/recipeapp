@@ -3,6 +3,7 @@ package com.djd2000.domain;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CategoryTest {
@@ -23,11 +24,13 @@ public class CategoryTest {
 	}
 
 	@Test
+	@Ignore
 	public void testGetDescription() {
 		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
+	@Ignore
 	public void testGetRecipies() {
 		fail("Not yet implemented"); // TODO
 	}
